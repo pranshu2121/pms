@@ -1,21 +1,10 @@
-import { AdminListComponent } from './admin-list/admin-list.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { UsersListComponent } from './users-list/users-list.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
-const routes: Routes = [
-  {
-    path:'users-list',
-    component:UsersListComponent
-  },
-  {
-    path:'admin-list',
-    component:AdminListComponent
-  },
-]
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}

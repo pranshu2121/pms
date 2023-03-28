@@ -13,41 +13,6 @@ export const menu: CoreMenu[] = [
     icon: "home",
     url: "dashboard",
   },
-  // Apps & Pages
-  // {
-  //   id: "apps",
-  //   type: "section",
-  //   title: "Apps & Pages",
-  //   translate: "MENU.APPS.SECTION",
-  //   icon: "package",
-  //   children: [
-  //     {
-  //       id: "slider-management",
-  //       title: "Slider Management",
-  //       translate: "MENU.PAGES.SLIDER",
-  //       type: "item",
-  //       // icon: 'circle',
-  //       url: "slider-management",
-  //     },
-  //     {
-  //       id: "contact-us",
-  //       title: "Contact Us",
-  //       translate: "MENU.PAGES.CONTACTUS",
-  //       type: "item",
-  //       // icon: 'circle',
-  //       url: "contact-us",
-  //       // collapsed: true
-  //     },
-  //     {
-  //       id: "about-us",
-  //       title: "About Us",
-  //       translate: "MENU.PAGES.ABOUTUS",
-  //       type: "item",
-  //       // icon: 'circle',
-  //       url: "about-us",
-  //     },
-  //   ],
-  // },
   {
     id: "admin",
     title: "Admin",
@@ -56,13 +21,6 @@ export const menu: CoreMenu[] = [
     icon: "user",
     role: ['Admin'],
     children: [
-      // {
-      //   id: "Admin",
-      //   title: "Admin-list",
-      //   type: "item",
-      //   icon: 'circle',
-      //   url: "Admin/admin-list",
-      // },
       {
         id: "users",
         title: "Users",
@@ -71,18 +29,8 @@ export const menu: CoreMenu[] = [
         icon: 'circle',
         url: "Admin/users-list",
       },
-      // {
-      //   id: "slider",
-      //   title: "Slider",
-      //   type: "item",
-      //   icon: 'circle',
-      //   url: "Admin/slider",
-      //   // translate: "MENU.USERS.SLIDER",
-      // },
-      
     ],
   },
-
   {
     id: "Feedback-Query",
     title: "Feedback-Query",
