@@ -50,10 +50,10 @@ const appRoutes: Routes = [];
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        HttpClientInMemoryWebApiModule.forRoot(FakeDbService, {
-            delay: 0,
-            passThruUnknownUrl: true
-        }),
+        // HttpClientInMemoryWebApiModule.forRoot(FakeDbService, {
+        //     delay: 0,
+        //     passThruUnknownUrl: true
+        // }),
         RouterModule.forRoot(appRoutes, {
             scrollPositionRestoration: 'enabled',
             relativeLinkResolution: 'legacy'

@@ -18,10 +18,10 @@ export const DELETE_ADMIN = API_URL+'admin/delete-admin/';
 export const EDIT_ADMIN = API_URL+'admin/edit-admin/';
 
 // Main module -> Admin Module -> Service ->slider Service
-export const ADD_SLIDER = API_URL+'slider/add-slider';
-export const GET_SLIDER = API_URL+'slider/get-slider';
-export const DELETE_SLIDER = API_URL+'slider/delete-slider/';
-export const EDIT_SLIDER = API_URL+'slider/edit-slider/';
+// export const ADD_SLIDER = API_URL+'slider/add-slider';
+// export const GET_SLIDER = API_URL+'slider/get-slider';
+// export const DELETE_SLIDER = API_URL+'slider/delete-slider/';
+// export const EDIT_SLIDER = API_URL+'slider/edit-slider/';
 
 // Main module -> Admin Module -> Service ->User Service
 export const GET_USERLIST = API_URL+'user/list';
