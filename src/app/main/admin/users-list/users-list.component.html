@@ -1,0 +1,159 @@
+<div class="content-wrapper container-xxl p-0">
+  <div class="content-body">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">User List</h4>
+      </div>
+      <section id="ngx-datatable-kitchen-sink">
+        <div class="row">
+          <div class="col-6 col-md-4 ml-3">
+            <fieldset class="form-group">
+              <ng-select
+                [items]="selectRole"
+                [(ngModel)]="selectedRole"
+                name="selectedRole"
+                bindLabel="name"
+                bindValue="value"
+                placeholder="Select Role"
+                (change)="filterByRole($event)"
+              >
+              </ng-select>
+            </fieldset>
+          </div>
+          <div class="col-6 col-md-4 ml-3">
+            <fieldset class="form-group">
+              <ng-select
+                [items]="selectDepartment"
+                [(ngModel)]="selectedDepartment"
+                name="selectedDepartment"
+                bindLabel="name"
+                bindValue="value"
+                placeholder="Select Department"
+                (change)="filterByDepartment($event)"
+              >
+              </ng-select>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="d-flex justify-content-between align-items-center m-1">
+              <label class="d-flex align-items-center mx-3"
+                >Show
+                <select
+                  class="form-control mx-25"
+                  [(ngModel)]="limit"
+                  (change)="setlimit()"
+                >
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                </select>
+                entries</label
+              >
+            </div>
+          </div>
+          <div class="col-md-6 col-12 d-flex justify-content-md-end">
+            <div
+              class="d-flex align-items-center justify-content-end pr-1 pb-1 pl-1 pl-md-0 pb-md-0 mr-3 ml-3"
+            >
+              <label class="d-flex align-items-center"
+                >Search<input
+                  type="search"
+                  placeholder="Search"
+                  class="form-control ml-25"
+                  [formControl]="searchBox"
+              /></label>
+            </div>
+          </div>
+        </div>
+        <ngx-datatable
+          [rows]="rows"
+          [rowHeight]="58"
+          class="bootstrap core-bootstrap"
+          [limit]="10"
+          [columnMode]="ColumnMode.force"
+          [headerHeight]="40"
+          [footerHeight]="50"
+          [scrollbarH]="true"
+          [limit]="limit"
+          [externalPaging]="true"
+          [externalSorting]="true"
+          [count]="rowCount"
+          (page)="
+            datatablePageData({ limit: limit, search: searchBox.value, user_type: this.selectedRole,
+              sortBy:this.columnSortBy,department:this.selectedDepartment }, $event)
+          "
+          [offset]="tableOffset"
+          (sort)="onSortFile($event)"
+        >
+          <ngx-datatable-column
+            name="user Code"
+            prop="user_code"
+            [width]="100"
+          ></ngx-datatable-column>
+
+          <ngx-datatable-column name="Name" prop="first_name">
+            <ng-template ngx-datatable-cell-template let-row="row">
+              {{ row.first_name }} {{ row.last_name }}
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column
+            name="Company Email"
+            prop="company_email"
+            [width]="250"
+          ></ngx-datatable-column>
+
+          <ngx-datatable-column
+            name="Personal Email"
+            prop="personal_email"
+            [width]="250"
+          ></ngx-datatable-column>
+
+          <ngx-datatable-column name="User_type" prop="user_type" [width]="120">
+            <ng-template let-user_type="value" ngx-datatable-cell-template>
+              {{ !user_type ? "Undefined" : user_type }}
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column
+            name="department"
+            prop="department"
+            [width]="200"
+          >
+            <ng-template let-department="value" ngx-datatable-cell-template>
+              {{ department }}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Actions" [width]="120" [sortable]="false">
+            <ng-template
+              ngx-datatable-cell-template
+              let-value="value"
+              let-row="row"
+            >
+              <div class="d-flex align-items-center">
+                <button class="bg-transparent border-0">
+                  <i
+                    data-feather="trash-2"
+                    class="text-primary cursor-pointer"
+                  ></i>
+                </button>
+                <button
+                  (click)="editUserDetail(row._id)"
+                  class="bg-transparent border-0"
+                >
+                  <i
+                    data-feather="edit"
+                    class="text-primary cursor-pointer"
+                  ></i>
+                </button>
+              </div>
+            </ng-template>
+          </ngx-datatable-column>
+        </ngx-datatable>
+      </section>
+    </div>
+  </div>
+</div>
