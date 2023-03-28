@@ -34,7 +34,6 @@ export class CoreConfigService {
 
     // Set the defaultConfig to localConfig if we have else appConfig (app-config.ts)
     this._defaultConfig = this.localConfig ? this.localConfig : _config;
-
     // Initialize the config service
     this._initConfig();
   }

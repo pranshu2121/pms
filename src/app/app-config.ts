@@ -18,7 +18,7 @@ export const coreConfig: CoreConfig = {
   app: {
     appName     : 'Tridhya Tech',                                      // App Name
     appTitle    : 'Tridhya', // App Title
-    appLogoImage: 'assets/images/icons/tridhya.png',              // App Logo
+    appLogoImage: 'assets/images/logo/tridhya_logo.png',              // App Logo
     appLanguage : 'en',                                           // App Default Language (en, fr, de, pt etc..)
   },
   layout: {
